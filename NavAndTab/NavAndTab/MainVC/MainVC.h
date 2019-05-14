@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../Extensions/UIView+Anchors.h"
+#import "../SecondVc/SecondVC.h"
 
 @interface MainVC : UIViewController
 
 
 @end
 
+@interface MainVC()
+@property (strong,nonatomic) UIButton *nextButton;
+@property (strong,nonatomic) UILabel *headerLabel;
+@end

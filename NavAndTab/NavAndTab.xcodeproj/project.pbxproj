@@ -13,6 +13,9 @@
 		6BEAC148228A7FBD00E96524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC146228A7FBD00E96524 /* LaunchScreen.storyboard */; };
 		6BEAC14B228A7FBD00E96524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC14A228A7FBD00E96524 /* main.m */; };
 		6BEAC153228A831000E96524 /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC152228A831000E96524 /* MainTabBarVC.m */; };
+		6BEAC15A228A906100E96524 /* UIView+Anchors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC159228A906100E96524 /* UIView+Anchors.m */; };
+		6BEAC15D228AA46D00E96524 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC15C228AA46D00E96524 /* SecondVC.m */; };
+		6BEAC163228ABC2900E96524 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC162228ABC2900E96524 /* ThirdVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,12 @@
 		6BEAC14A228A7FBD00E96524 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6BEAC151228A831000E96524 /* MainTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		6BEAC152228A831000E96524 /* MainTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		6BEAC158228A906100E96524 /* UIView+Anchors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Anchors.h"; sourceTree = "<group>"; };
+		6BEAC159228A906100E96524 /* UIView+Anchors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Anchors.m"; sourceTree = "<group>"; };
+		6BEAC15B228AA46D00E96524 /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		6BEAC15C228AA46D00E96524 /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		6BEAC161228ABC2900E96524 /* ThirdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		6BEAC162228ABC2900E96524 /* ThirdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +68,12 @@
 		6BEAC13A228A7FBA00E96524 /* NavAndTab */ = {
 			isa = PBXGroup;
 			children = (
+				6BEAC15F228AA48400E96524 /* MainVC */,
+				6BEAC15E228AA47500E96524 /* SecondVc */,
+				6BEAC154228A8FF200E96524 /* Extensions */,
+				6BEAC160228ABBF800E96524 /* ThirdVC */,
 				6BEAC13B228A7FBA00E96524 /* AppDelegate.h */,
 				6BEAC13C228A7FBA00E96524 /* AppDelegate.m */,
-				6BEAC13E228A7FBA00E96524 /* MainVC.h */,
-				6BEAC13F228A7FBA00E96524 /* MainVC.m */,
 				6BEAC144228A7FBD00E96524 /* Assets.xcassets */,
 				6BEAC146228A7FBD00E96524 /* LaunchScreen.storyboard */,
 				6BEAC149228A7FBD00E96524 /* Info.plist */,
@@ -71,6 +82,42 @@
 				6BEAC152228A831000E96524 /* MainTabBarVC.m */,
 			);
 			path = NavAndTab;
+			sourceTree = "<group>";
+		};
+		6BEAC154228A8FF200E96524 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC158228A906100E96524 /* UIView+Anchors.h */,
+				6BEAC159228A906100E96524 /* UIView+Anchors.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6BEAC15E228AA47500E96524 /* SecondVc */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC15B228AA46D00E96524 /* SecondVC.h */,
+				6BEAC15C228AA46D00E96524 /* SecondVC.m */,
+			);
+			path = SecondVc;
+			sourceTree = "<group>";
+		};
+		6BEAC15F228AA48400E96524 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC13E228A7FBA00E96524 /* MainVC.h */,
+				6BEAC13F228A7FBA00E96524 /* MainVC.m */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		6BEAC160228ABBF800E96524 /* ThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC161228ABC2900E96524 /* ThirdVC.h */,
+				6BEAC162228ABC2900E96524 /* ThirdVC.m */,
+			);
+			path = ThirdVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEAC163228ABC2900E96524 /* ThirdVC.m in Sources */,
+				6BEAC15A228A906100E96524 /* UIView+Anchors.m in Sources */,
 				6BEAC140228A7FBA00E96524 /* MainVC.m in Sources */,
 				6BEAC14B228A7FBD00E96524 /* main.m in Sources */,
 				6BEAC13D228A7FBA00E96524 /* AppDelegate.m in Sources */,
+				6BEAC15D228AA46D00E96524 /* SecondVC.m in Sources */,
 				6BEAC153228A831000E96524 /* MainTabBarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
