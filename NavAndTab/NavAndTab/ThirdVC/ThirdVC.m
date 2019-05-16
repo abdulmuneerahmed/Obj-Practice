@@ -23,14 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *value = [[NSUserDefaults standardUserDefaults] objectForKey:@"visited"];
     NSDictionary *userInfoDict = @{@"name":@"Muneer Ahmed"};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SomeActionComplete" object:nil userInfo:userInfoDict];
+    
+    if (value != nil) {
+        self.headerLabel.text = value;
+    }
 }
 
 -(UILabel *)addLabel {
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont fontWithName:@"AvenirNext-Heavy" size:80];
     label.textAlignment = NSTextAlignmentCenter;
+    label.adjustsFontSizeToFitWidth = YES;
     label.text = @"3";
     label.textColor = UIColor.whiteColor;
     return label;
@@ -64,6 +70,8 @@
 -(void)nextVC {
 //    MainVC *firstVC = [[MainVC alloc] init];
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [[NSUserDefaults standardUserDefaults] setObject:@"Third Controller visited" forKey:@"visited"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
