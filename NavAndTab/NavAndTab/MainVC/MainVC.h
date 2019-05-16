@@ -10,7 +10,7 @@
 #import "../Extensions/UIView+Anchors.h"
 #import "../SecondVc/SecondVC.h"
 
-@interface MainVC : UIViewController
+@interface MainVC : UIViewController <Test>
 
 
 @end

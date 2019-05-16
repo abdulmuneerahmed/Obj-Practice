@@ -24,13 +24,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a ni
+
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 -(UILabel *)addLabel {
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont fontWithName:@"AvenirNext-Heavy" size:80];
     label.textAlignment = NSTextAlignmentCenter;
+    label.adjustsFontSizeToFitWidth = YES;
     label.text = @"1";
     label.textColor = UIColor.whiteColor;
     return label;
@@ -54,6 +60,10 @@
     [self.nextButton setButtonCons:self.view.safeAreaLayoutGuide.bottomAnchor centerX:self.view.centerXAnchor width:self.view.frame.size.width - 100 height:50];
 }
 
+-(void)setNamem:(NSString *)lastName {
+    self.headerLabel.text = [NSString stringWithFormat:@"1. %@",lastName];
+}
+
 -(void)navSetup {
     self.navigationController.navigationBar.prefersLargeTitles= YES;
     self.navigationItem.title = @"First";
@@ -64,6 +74,10 @@
 
 -(void)nextVC {
     SecondVC *secondVC = [[SecondVC alloc] init];
+    secondVC.name = @"Muneer";
+    secondVC.delegate = self;
     [self.navigationController pushViewController:secondVC animated:YES];
 }
+
+
 @end

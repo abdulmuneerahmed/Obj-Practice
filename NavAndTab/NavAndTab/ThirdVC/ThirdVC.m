@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSDictionary *userInfoDict = @{@"name":@"Muneer Ahmed"};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SomeActionComplete" object:nil userInfo:userInfoDict];
 }
 
 -(UILabel *)addLabel {

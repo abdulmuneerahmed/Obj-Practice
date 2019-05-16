@@ -14,6 +14,8 @@
 
 @implementation SecondVC
 
+//@synthesize delegate;
+
 - (void)loadView {
     [super loadView];
     [self navSetup];
@@ -23,13 +25,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.headerLabel.text = self.name;
     
+    //Add Observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationAction:) name:@"SomeActionComplete" object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.delegate setNamem:self.headerLabel.text];
 }
 
 -(UILabel *)addLabel {
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont fontWithName:@"AvenirNext-Heavy" size:80];
     label.textAlignment = NSTextAlignmentCenter;
+    label.adjustsFontSizeToFitWidth = YES;
     label.text = @"2";
     label.textColor = UIColor.whiteColor;
     return label;
@@ -71,6 +82,19 @@
 -(void)nextVC {
     ThirdVC *thirdVC = [[ThirdVC alloc] init];
     [self.navigationController pushViewController:thirdVC animated:YES];
+    
+}
+-(void)notificationAction:(NSNotification *)notification {
+    if ([notification.name isEqualToString:@"SomeActionComplete"]) {
+        NSDictionary *userInfo = notification.userInfo;
+        NSString* person = (NSString*)userInfo[@"name"];
+        self.headerLabel.text = person;
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomeActionComplete" object:nil];
 }
 
 @end
