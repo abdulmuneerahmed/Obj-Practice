@@ -10,6 +10,10 @@
 #import "../View/DataCell.h"
 #import "../Model/TableDataCell.h"
 #import "../Model/DataServicer.h"
+//#import "Data"
+
+
+
 @interface MainVC : UIViewController
 
 //@property NSMutableArray *dataObject;
